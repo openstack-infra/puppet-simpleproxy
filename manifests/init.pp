@@ -12,9 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-# == Class: mysql_proxy
+# == Class: simpleproxy
 #
-class mysql_proxy {
+class simpleproxy {
 
     package { 'mysql-proxy':
       ensure => absent,
