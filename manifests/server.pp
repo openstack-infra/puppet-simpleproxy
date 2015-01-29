@@ -12,9 +12,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-# == Class: mysql_proxy::server
+# == Class: simpleproxy::server
 #
-class mysql_proxy::server (
+class simpleproxy::server (
   $db_host,
   $db_port='3306',
 ) {
@@ -28,7 +28,7 @@ class mysql_proxy::server (
     owner   => 'root',
     group   => 'root',
     mode    => '0555',
-    content => template('mysql_proxy/simpleproxy-mysql.init.erb'),
+    content => template('simpleproxy/simpleproxy-mysql.init.erb'),
     require => Package['simpleproxy']
   }
 
