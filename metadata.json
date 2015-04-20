@@ -1,5 +1,5 @@
 {
-  "name": "openstackci-simpleproxy",
+  "name": "openstackinfra-simpleproxy",
   "version": "0.0.1",
   "author": "OpenStack CI",
   "summary": "Puppet module for Simpleproxy",
