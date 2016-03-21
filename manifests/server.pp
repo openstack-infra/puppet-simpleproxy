@@ -16,7 +16,7 @@
 #
 class simpleproxy::server (
   $db_host,
-  $db_port='3306',
+  $db_port = '3306',
 ) {
 
   file { '/etc/mysql-proxy/mysql-proxy.conf':
