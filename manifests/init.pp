@@ -15,23 +15,40 @@
 # == Class: simpleproxy
 #
 class simpleproxy {
+  package { 'mysql-proxy':
+    ensure => absent,
+  }
 
-    package { 'mysql-proxy':
-      ensure => absent,
-    }
+  file { '/etc/mysql-proxy':
+    ensure  => absent,
+    recurse => true,
+    force   => true,
+  }
 
-    file { '/etc/mysql-proxy':
-      ensure  => absent,
-      recurse => true,
-      force   => true,
-    }
+  file { '/etc/default/mysql-proxy':
+    ensure => absent,
+  }
 
-    file { '/etc/default/mysql-proxy':
-      ensure => absent,
-    }
+  package { 'simpleproxy':
+    ensure => latest,
+  }
 
-    package { 'simpleproxy':
-      ensure => latest,
-    }
+  group { 'simpleproxy':
+    ensure => present,
+    system => true,
+  }
 
+  user { 'simpleproxy':
+    ensure     => present,
+    system     => true,
+    comment    => 'Simple Proxy User',
+    home       => '/usr/share/doc/simpleproxy',
+    gid        => 'simpleproxy',
+    shell      => '/bin/bash',
+    membership => 'minimum',
+    require    => [
+      Group['simpleproxy'],
+      Package['simpleproxy'],
+    ],
+  }
 }

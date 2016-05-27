@@ -18,7 +18,7 @@ NAME=simpleproxy-mysql
 DAEMON=/usr/bin/simpleproxy
 DAEMON_ARGS="-L<%= @db_port %> -R <%= @db_host %>:<%= @db_port %> -d"
 SCRIPTNAME=/etc/init.d/$NAME
-USER=logstash
+USER=simpleproxy
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0
