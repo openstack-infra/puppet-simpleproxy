@@ -1,5 +1,3 @@
-# OpenStack Simpleproxy Module
+# This repo has moved to OpenDev
 
-## Overview
-
-Configures Simpleproxy.
+It can now be found at [https://opendev.org/opendev/puppet-simpleproxy](https://opendev.org/opendev/puppet-simpleproxy)
